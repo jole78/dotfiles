@@ -31,6 +31,13 @@ do
   source $file
 done
 
+# Put all local aliases in ~/.local/_aliases.zsh 
+# This means they'll stay out of your main dotfiles repository (which may be public, like this one), but still work
+if [[ -a ~/.local/_aliases.zsh ]]
+then
+  source ~/.local/_aliases.zsh
+fi
+
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
